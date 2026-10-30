@@ -25,6 +25,7 @@
 |---|---|
 | `BOT_TOKEN` | токен от @BotFather — **обязательно** |
 | `SYSTEM_PROMPT` | характер и задача бота |
+| `WELCOME_TEXT` | приветствие на /start |
 | `ALLOWED_CHAT_IDS` | если задано — бот отвечает только этим chat ID (через запятую) |
 | `GEMINI_API_KEY`, `OPENROUTER_API_KEY`, `OLLAMA_URL` | ИИ; без них бот работает в режиме «эхо» |
 | `GEMINI_MODEL`, `OPENROUTER_MODEL`, `OLLAMA_MODEL` | смена моделей (необязательно) |

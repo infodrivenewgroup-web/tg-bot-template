@@ -22,6 +22,7 @@ log = logging.getLogger("bot")
 
 BOT_TOKEN = os.getenv("BOT_TOKEN", "").strip()
 SYSTEM_PROMPT = os.getenv("SYSTEM_PROMPT", "Ты дружелюбный помощник. Отвечай по-русски, коротко и понятно.")
+WELCOME_TEXT = os.getenv("WELCOME_TEXT", "Привет! Я бот на шаблоне proffi. Напишите что-нибудь.")
 ALLOWED = {x.strip() for x in os.getenv("ALLOWED_CHAT_IDS", "").split(",") if x.strip()}
 GEMINI_KEY = os.getenv("GEMINI_API_KEY", "")
 OPENROUTER_KEY = os.getenv("OPENROUTER_API_KEY", "")
@@ -74,7 +75,7 @@ def allowed(m: Message) -> bool:
 @dp.message(CommandStart())
 async def start(m: Message):
     if allowed(m):
-        await m.answer("Привет! Я бот на шаблоне proffi. Напишите что-нибудь.")
+        await m.answer(WELCOME_TEXT)
 
 
 @dp.message(F.text)
